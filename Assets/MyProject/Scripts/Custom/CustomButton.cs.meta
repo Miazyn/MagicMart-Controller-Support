@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9dba8357536294140bb8eb49f6243f11
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_TargetGraphic: {instanceID: 0}
+  - btnSprite: {fileID: -6989987607372428825, guid: 3bc468d5bfdf82e49b48a27e7c167b07, type: 3}
+  - clickSound: {fileID: 8300000, guid: b0b4d9101923bea488f22040e9ab2751, type: 3}
+  - tmpFont: {fileID: 11400000, guid: d7898970d2fdcac449a7895f833e9515, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
