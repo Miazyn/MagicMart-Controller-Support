@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed88c8208fd4a241ab99921791e55f1, type: 3}
+  m_Name: 0102
+  m_EditorClassIdentifier: 
+  keyForName: 000000000100000002000000040000000500000006000000070000000800000009000000
+  nameOfSpeaker:
+  - Steve
+  - $playerName
+  - Steve
+  - $playerName
+  - Steve
+  - $playerName
+  - Steve
+  - $playerName
+  - Steve
+  keyForCharacterDisplay: 000000000300000005000000
+  spriteForCharacterDisplay:
+  - {fileID: 21300000, guid: e052a03da4af7a94fb57dc00b979550c, type: 3}
+  - {fileID: 21300000, guid: 75b3b7f2e35c7b64a92d9cd43815634f, type: 3}
+  - {fileID: 21300000, guid: e052a03da4af7a94fb57dc00b979550c, type: 3}
+  lines:
+  - uyxyuyzf!! It looks just like back from my home planet!
+  - "Home planet? Where are you from?\r"
+  - 'I come from a planet far faaaar away and moved here because of the job offer
+    I got. '
+  - My first day of work is in a few days.
+  - 'How do you like it here so far?
+
+'
+  - "This is a bit embarrassing to say but\u2026 I\u2019ve been feeling quite homesick
+    since I moved here s-sniff sniff\u2026"
+  - I feel you bud. I also miss my home sometimes.
+  - But the food from my home is already making me feel a bit better.
+  - "I\u2019m pleased that it gives you comfort."
+  - "Thank you so much! I will definitely visit again. \r"
+  dialogueChoices: []

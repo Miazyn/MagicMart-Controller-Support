@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed88c8208fd4a241ab99921791e55f1, type: 3}
+  m_Name: 0201 YES
+  m_EditorClassIdentifier: 
+  keyForName: 000000000100000002000000030000000400000006000000
+  nameOfSpeaker:
+  - ???
+  - $playerName
+  - ???
+  - $playerName
+  - ???
+  - $playerName
+  keyForCharacterDisplay: 00000000020000000400000005000000
+  spriteForCharacterDisplay:
+  - {fileID: 21300000, guid: 9881ad90a9ee6a04f919a88e512f8ccc, type: 3}
+  - {fileID: 21300000, guid: 491234b85a40dce43bf7d3541a7212f8, type: 3}
+  - {fileID: 21300000, guid: 0e5b6786841f44a4583671b6fe26b950, type: 3}
+  - {fileID: 21300000, guid: a56493647d59eb141b9e4abd6b705cca, type: 3}
+  lines:
+  - "Good Morning. I was hoping that I did not have to return to this shop but your
+    creation didn\u2019t work out as planned."
+  - What was wrong with it?
+  - "The poison wasn\u2019t strong enough, which was a huge disappointment."
+  - "It should\u2019ve been strong enough to kill a few rats though\u2026"
+  - "It doesn\u2019t matter\u2026"
+  - Make me something stronger. The strongest toxin that is available.
+  - "Ahh\u2026.alright..? "
+  dialogueChoices: []

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261f2721fe522024fa0cacc094294452, type: 3}
+  m_Name: Steve
+  m_EditorClassIdentifier: 
+  NpcName: Steve
+  quests:
+  - {fileID: 11400000, guid: 48aefce93ce802e4ca9beb69f50f333e, type: 2}
+  - {fileID: 11400000, guid: dea56815b2b05334696e86237ea5edd9, type: 2}
+  - {fileID: 11400000, guid: a9a1a6e9bad189742812055b66861b45, type: 2}
+  unlockDay: 0
+  unlockQuest: {fileID: 0}
+  voice: {fileID: 11400000, guid: 2a946b638ddc7a345812c81ef5c7a3c4, type: 2}
+  Type: 0

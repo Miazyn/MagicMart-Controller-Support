@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed88c8208fd4a241ab99921791e55f1, type: 3}
+  m_Name: 0202
+  m_EditorClassIdentifier: 
+  keyForName: 00000000010000000300000005000000
+  nameOfSpeaker:
+  - $playerName
+  - Steve
+  - $playerName
+  - Steve
+  keyForCharacterDisplay: 0000000006000000
+  spriteForCharacterDisplay:
+  - {fileID: 21300000, guid: d2f2afdcf4fb9e64c93b46d0073b5f9f, type: 3}
+  - {fileID: 21300000, guid: e052a03da4af7a94fb57dc00b979550c, type: 3}
+  lines:
+  - So.. do you want to tell me what happened?
+  - "I was going for a walk and.. and..\r"
+  - "Some children saw me just now and ran away screaming.\r"
+  - Aw man..  I'm sorry that that happened to you.
+  - "People tend to be scared of things they don't know but that doesn\u2019t mean
+    that you should change yourself.\r"
+  - "No one has ever been so nice to me\u2026"
+  - Thank you, I will cherish this.
+  dialogueChoices: []

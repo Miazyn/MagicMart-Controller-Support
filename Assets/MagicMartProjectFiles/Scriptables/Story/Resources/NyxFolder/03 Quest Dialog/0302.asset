@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed88c8208fd4a241ab99921791e55f1, type: 3}
+  m_Name: 0302
+  m_EditorClassIdentifier: 
+  keyForName: 00000000010000000300000004000000050000000600000008000000090000000b0000000c0000000e0000001000000011000000
+  nameOfSpeaker:
+  - $playerName
+  - Nyx
+  - $playerName
+  - Nyx
+  - $playerName
+  - Nyx
+  - $playerName
+  - Nyx
+  - $playerName
+  - Nyx
+  - $playerName
+  - Nyx
+  - $playerName
+  keyForCharacterDisplay: 000000000100000006000000070000000c00000010000000
+  spriteForCharacterDisplay:
+  - {fileID: 21300000, guid: 6bceae780d3a7b24eb6938c50e542fa1, type: 3}
+  - {fileID: 21300000, guid: b8751672238342348835f8bdb93fa8df, type: 3}
+  - {fileID: 21300000, guid: 6bceae780d3a7b24eb6938c50e542fa1, type: 3}
+  - {fileID: 21300000, guid: 825f09fd0c9fa2a46ab2e8a8f42951df, type: 3}
+  - {fileID: 21300000, guid: b8751672238342348835f8bdb93fa8df, type: 3}
+  - {fileID: 21300000, guid: 6bceae780d3a7b24eb6938c50e542fa1, type: 3}
+  lines:
+  - "Here you go, Nyx. Are you all right? You look a bit\u2026 green today."
+  - "It\u2019s embarrassing to say this and if you tell anyone about this it will
+    not. end. well. for you"
+  - "But.\r I accidentally used the poison from last time as a perfume. \r\n"
+  - 'What?? How? You were aware that it''s poison!!
+
+'
+  - "But.. but it smelled so good\u2026\r And to be fair, it looks very similar to
+    the perfume I have at home.\r\n"
+  - "Are you sure that perfume of yours is safe to use\u2026? "
+  - I did get it from a suspicious store like this one but so far nothing happened
+    to me except for-
+  - Why am I even telling you this?!
+  - You seem to like me now!! No need to be shy to open yourself up to me.
+  - '!!!
+
+'
+  - "There is no way, I promised myself to never open up to anyone because emotions
+    are a waste of time\u2026\r\n"
+  - "About the rat problem, that wasn\u2019t a rat right?"
+  - "Mh\u2026"
+  - "No it wasn\u2019t. I wanted to take revenge on my rival who took my vampire
+    boyfriend away from me.\r\n"
+  - "I, wow. That took a turn.\r I shouldn\u2019t be surprised to hear this from
+    you.\r\n"
+  - 'Well, just so you know, you will not get any kind of deadly poison from me ever
+    again.
+
+'
+  - "Too bad but she\u2019s dead now anyway. Have a nice day"
+  - "Ah\u2026Bye?\r\n"
+  dialogueChoices: []

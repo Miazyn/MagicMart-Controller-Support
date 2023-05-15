@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed88c8208fd4a241ab99921791e55f1, type: 3}
+  m_Name: 0102
+  m_EditorClassIdentifier: 
+  keyForName: 00000000020000000300000004000000050000000600000007000000090000000a000000
+  nameOfSpeaker:
+  - Claw & Mr.Wiggles
+  - $playerName
+  - Claw & Mr.Wiggles
+  - $playerName
+  - Claw & Mr.Wiggles
+  - $playerName
+  - Claw & Mr.Wiggles
+  - $playerName
+  - Claw & Mr.Wiggles
+  keyForCharacterDisplay: 0000000007000000
+  spriteForCharacterDisplay:
+  - {fileID: 21300000, guid: 0d55f8dc04f6d6a46b1616a810af29e9, type: 3}
+  - {fileID: 21300000, guid: 77468eeb7981eda4e94c9f84d593f2fd, type: 3}
+  lines:
+  - "Well anyways, my name\u2019s Claw, Destroyer of Mankind.\r"
+  - 'I actually came here because my baby Mr. Wiggles has an ouchie.
+
+    squeak!'
+  - "Aww he\u2019s wearing a coat! Is he cold?"
+  - "Oh no.. I\u2019ve recently discovered my passion for knitting and sewing, so
+    I make cute outfits for my hamster in my free time.\r\n"
+  - "That's lovely, Mr. Wiggles seems to like it.\r What exactly seems to be the
+    problem with your hamster?\r"
+  - "Sooo\u2026 Mr. Wiggles sometimes gets the zoomies and gets fast and furious
+    on his hamster wheel."
+  - O-Oh?
+  - 'But today he managed to launch himself out of the wheel and slam into the wall.
+    The vet I went to was useless so I hope that the fruit salad will heal his ouchie.
+
+
+'
+  - "I can't thank you enough, inferior being! \r"
+  - 'M-mhm yeah no problem. Get well soon!
+
+'
+  - Well then, see you around!
+  dialogueChoices: []

@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49db9102f7fe43e469db7b9fa140719e, type: 3}
+  m_Name: Player Inventory
+  m_EditorClassIdentifier: 
+  inventoryName: Player Inventory
+  inventoryItems:
+  - item: {fileID: 11400000, guid: 5632ee791d1f42a4b9817c39bd249e94, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: 057d067730aedca42bb0fc7a2c24eefd, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: 125d5a226fc8ea545adfb0458d06f154, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: dadb8a36488f3d84297892ea23ac8f76, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: 23b59af99ba71af49815902778c9e507, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: c21a0c73eb2d98c49a61e2c43a8c8059, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: 7245227a7847e6a4587fd584911454f4, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: 77118deafc032704eae6202d29334eb8, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: e7a5c6b2fe89b204f9536a1b8ab8e455, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: eddb6eadaf1242542b5ed8270cdb6c9d, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: d55396abbdd2c3f428456d0fc1fae120, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: b63e3d711df9ab24aac723cccebe27b5, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: 5809dde9a25eec6419b29b7e54a7efc0, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: e0343a70df420d3408c14c1e27ad99bb, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: e2092338c552bcc48887784d0931926b, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: f0854ad46e9db684691f2bd0d6716bc7, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: a1a715553ee913a428592cbba00310c2, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: c8083d241895e4f46ae2a1f8a2884a2c, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: 3fb97ab030fbd474cb25f73e4cb05120, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: 288c326f58240ee48add130fdd122690, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: dc13455f177eb0141aac3edc86bbde06, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: 5ef865141b21e3944bee274c7d255dc1, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: 32c40313a6816834d9561555200ff940, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: 68af3ad6eaaea424fb6909ce7899cab3, type: 2}
+    amount: 5

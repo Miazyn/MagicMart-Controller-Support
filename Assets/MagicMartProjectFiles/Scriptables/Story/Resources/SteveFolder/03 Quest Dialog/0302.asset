@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed88c8208fd4a241ab99921791e55f1, type: 3}
+  m_Name: 0302
+  m_EditorClassIdentifier: 
+  keyForName: 00000000010000000200000003000000040000000500000006000000
+  nameOfSpeaker:
+  - $playerName
+  - Steve
+  - $playerName
+  - Steve
+  - $playerName
+  - Steve
+  - $playerName
+  keyForCharacterDisplay: 00000000010000000300000005000000
+  spriteForCharacterDisplay:
+  - {fileID: 21300000, guid: f41548da1e785804ebcf6748c60155d3, type: 3}
+  - {fileID: 21300000, guid: 2db3912d7ba0de1429564816772da1f7, type: 3}
+  - {fileID: 21300000, guid: f41548da1e785804ebcf6748c60155d3, type: 3}
+  - {fileID: 21300000, guid: 2db3912d7ba0de1429564816772da1f7, type: 3}
+  lines:
+  - "Here\u2019s your order!\r  Also, what's the occasion? You look like such a businessman
+    today.\r"
+  - "Thank you!\r Today was my first day at work and I just wanted to tell you that
+    your advice really helped me to embrace myself."
+  - Wow, really? Did something good happen?
+  - I seem to get along pretty well with my colleagues.
+  - "I\u2019m stoked to hear that!\r"
+  - I owe you one
+  - "You\u2019re welcome!\r\n"
+  dialogueChoices: []

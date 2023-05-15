@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed88c8208fd4a241ab99921791e55f1, type: 3}
+  m_Name: 0202
+  m_EditorClassIdentifier: 
+  keyForName: 00000000010000000200000003000000050000000600000007000000
+  nameOfSpeaker:
+  - $playerName
+  - Claw
+  - $playerName
+  - Claw
+  - $playerName
+  - Claw
+  - $playerName
+  keyForCharacterDisplay: 0000000004000000
+  spriteForCharacterDisplay:
+  - {fileID: 21300000, guid: 73a8c63bba0a90f418105767553e9a37, type: 3}
+  - {fileID: 21300000, guid: ff518878e27db4a4497b5cdb379eee10, type: 3}
+  lines:
+  - Why exactly do you need this?
+  - "Mr. Wiggles\u2026 He\u2019s not himself anymore."
+  - What happened??
+  - "The salad you made last time. I think it was too strong for him. He\u2019s just
+    a little baby you know\u2026"
+  - "Wiggles has so much energy now, that he can't stop running and do cartwheels.\r
+    I\u2019m worried that he\u2019ll hurt himself!\r"
+  - 'Oh god! This could be one of the side effects of the salad. The Moonlight Dumplings
+    are a good antidote and shall calm your hamster down.
+
+'
+  - Many thanks, little guy. I will try this right away.
+  - 'Good luck!
+
+'
+  dialogueChoices: []

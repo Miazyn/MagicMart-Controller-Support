@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed88c8208fd4a241ab99921791e55f1, type: 3}
+  m_Name: 0101 YES
+  m_EditorClassIdentifier: 
+  keyForName: 000000000100000002000000030000000400000005000000
+  nameOfSpeaker:
+  - $playerName
+  - ???
+  - $playerName
+  - ???
+  - $playerName
+  - ???
+  keyForCharacterDisplay: 0000000005000000
+  spriteForCharacterDisplay:
+  - {fileID: 21300000, guid: a56493647d59eb141b9e4abd6b705cca, type: 3}
+  - {fileID: 21300000, guid: 0e5b6786841f44a4583671b6fe26b950, type: 3}
+  lines:
+  - Hi there! How are you on this beautiful day?
+  - "Don\u2019t waste my time. I need poison. "
+  - Poison? What do you need that for?
+  - " I need to get rid of\u2026pests."
+  - Oh. Pests. Okay.
+  - Yes. Anyhow, get started with it.
+  dialogueChoices: []

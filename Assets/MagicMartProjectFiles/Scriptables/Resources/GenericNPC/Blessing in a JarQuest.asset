@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a1bab3b3e43e2e4b853821bff1b4c19, type: 3}
+  m_Name: Blessing in a JarQuest
+  m_EditorClassIdentifier: 
+  QuestName: 
+  ReqRecipe: {fileID: 11400000, guid: 60968c83fbb25b7499519b3acc35adc1, type: 2}
+  CookedFood: {fileID: 0}
+  _IsFullFilled: 0
+  QuestDialogBeforeCompletion:
+  - {fileID: 11400000, guid: fd27c1395c735e949b30ae8e381e0caa, type: 2}
+  QuestDialogAfterCompletion:
+  - {fileID: 11400000, guid: 23a7f55480aedaf45a36f9e42db69957, type: 2}

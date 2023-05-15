@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0f67c8c74950c43ae3fd6278887ccb, type: 3}
+  m_Name: Moonlight Dumplings
+  m_EditorClassIdentifier: 
+  recipeName: Moonlight Dumplings
+  description: 
+  ingredients:
+  - {fileID: 11400000, guid: b63e3d711df9ab24aac723cccebe27b5, type: 2}
+  - {fileID: 11400000, guid: 5632ee791d1f42a4b9817c39bd249e94, type: 2}
+  - {fileID: 11400000, guid: 057d067730aedca42bb0fc7a2c24eefd, type: 2}
+  recipeSprite: {fileID: 21300000, guid: 3d615b8f0c4d4914cbf42907ba65a94d, type: 3}
+  health: 10
+  mana: 20
+  power: 10
+  terribleSellPrice: 9777
+  normalSellPrice: 14777
+  goodSellPrice: 15777
+  perfectSellPrice: 17777
