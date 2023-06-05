@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 4724787970634593485}
   - component: {fileID: 4724787970634593484}
   m_Layer: 5
-  m_Name: Spawner(Card)
+  m_Name: SpawnerCARD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -581,7 +581,11 @@ MonoBehaviour:
   prefabParent: {fileID: 0}
   AfterThekeParent: {fileID: 0}
   canvas: {fileID: 0}
+  cursorOffset: 20
+  heightMultiplier: 2
   highlightColor: {r: 0.63529414, g: 0.5529412, b: 0.48627454, a: 1}
+  player: {fileID: 0}
+  gamepadCursor: {fileID: 0}
 --- !u!1 &4724787971044591293
 GameObject:
   m_ObjectHideFlags: 0

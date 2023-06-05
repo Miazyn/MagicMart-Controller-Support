@@ -9,6 +9,7 @@ using TMPro;
 
 public class IngredientSpawner : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IInitializePotentialDragHandler, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
+
     [Header("Ingredient")]
     public GameObject ingredientPrefab;
     public SO_Ingredient ingredientToSpawn;
@@ -22,8 +23,10 @@ public class IngredientSpawner : MonoBehaviour, IPointerEnterHandler, IPointerEx
     public Transform prefabParent;
     public Transform AfterThekeParent;
     public Canvas canvas;
+    [Range(10f, 20f)] [SerializeField] private float cursorOffset = 10f;
+    [Range(1.1f, 5f)] [SerializeField] private float heightMultiplier = 1.2f;
 
-    [SerializeField]public Image itemImage { get; private set; }
+    [SerializeField] public Image itemImage { get; private set; }
     CookIngredient ingredientScript;
     GameObject instantiatedObject;
 
@@ -33,13 +36,16 @@ public class IngredientSpawner : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
     [SerializeField] Player player;
     [SerializeField] GamepadCursor gamepadCursor;
+    private Camera mainCamera;
 
     void Awake()
     {
         itemImage = transform.Find("ItemImage").gameObject.GetComponent<Image>();
         ItemAmount = transform.Find("Amount").gameObject.GetComponent<TextMeshProUGUI>();
         defaultColor = GetComponent<Image>().color;
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
+        gamepadCursor = GameObject.Find("GamepadCursor").GetComponent<GamepadCursor>();
     }
 
     void Start()
@@ -75,20 +81,26 @@ public class IngredientSpawner : MonoBehaviour, IPointerEnterHandler, IPointerEx
         Vector3 mousePos = Vector3.zero;
         if (gamepadCursor.GetComponent<PlayerInput>().currentControlScheme == "KeyboardMouse")
         {
-            Vector2 mouseDelta = Mouse.current.delta.ReadValue();
-            mousePos = new Vector3(mouseDelta.x - 2, mouseDelta.y - 2, 0);
+            Vector2 mouseDelta = Mouse.current.position.ReadValue();
+
+            mousePos = new Vector3(mouseDelta.x - cursorOffset, mouseDelta.y - (cursorOffset * heightMultiplier), 0);
         }
+
+        if (gamepadCursor.GetComponent<PlayerInput>().currentControlScheme == "KeyboardMouse")
+        {
+
+        }
+
         //Vector3 mousePos = new Vector3(Input.mousePosition.x - 2, Input.mousePosition.y - 2, Input.mousePosition.z);
 
         instantiatedObject.transform.position = mousePos;
-
 
         eventData.pointerDrag = instantiatedObject;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        
+
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -109,7 +121,7 @@ public class IngredientSpawner : MonoBehaviour, IPointerEnterHandler, IPointerEx
                 GetComponent<Image>().color = highlightColor;
             }
         }
-        
+
     }
 
     public void OnPointerExit(PointerEventData eventData)

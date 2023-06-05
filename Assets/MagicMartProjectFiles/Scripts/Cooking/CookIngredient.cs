@@ -39,6 +39,7 @@ public class CookIngredient : MonoBehaviour, IDropHandler, IBeginDragHandler, IE
     }
     private void Start()
     {
+        Debug.Log($"Spawned in: {transform.position}");
         GetComponent<Image>().sprite = ingredient.ingredientSprite;
         if (!canvas)
         {
@@ -48,8 +49,11 @@ public class CookIngredient : MonoBehaviour, IDropHandler, IBeginDragHandler, IE
         StartCoroutine(CheckIfDragged());
 
     }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
+        Debug.Log("Begin dragged");
+
         IsCurrentlyDragged = true;
         canvasGroup.alpha = onDragAlpha;
         canvasGroup.blocksRaycasts = false;
@@ -57,12 +61,17 @@ public class CookIngredient : MonoBehaviour, IDropHandler, IBeginDragHandler, IE
     }
     public void OnDrag(PointerEventData eventData)
     {
+        Debug.Log("Dragging");
+
         IsOnTheke = false;
         rect.anchoredPosition += eventData.delta / canvas.scaleFactor;
         IsDragged = true;
     }
     public void OnEndDrag(PointerEventData eventData)
     {
+        Debug.Log("End dragged");
+
+
         IsCurrentlyDragged = false;
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
@@ -71,6 +80,7 @@ public class CookIngredient : MonoBehaviour, IDropHandler, IBeginDragHandler, IE
         {
             Debug.Log("I am not on a theke: " + ingredient.ingredientName);
             GameObject.FindObjectOfType<CookingPot>().RemoveItem(ingredient);
+
             Destroy(gameObject);
         }
         else if(!IsOnTheke)
@@ -85,6 +95,7 @@ public class CookIngredient : MonoBehaviour, IDropHandler, IBeginDragHandler, IE
         yield return new WaitForSeconds(delayedCheck);
         if (!IsDragged)
         {
+
             Destroy(gameObject);
         }
     }
