@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1245243632720661339, guid: 9be3b9d38980be449bbd575b661c5436, type: 3}
       propertyPath: keyToPress
-      value: 276
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1245243632720661339, guid: 9be3b9d38980be449bbd575b661c5436, type: 3}
       propertyPath: toleranceGoodHit
@@ -66,6 +66,14 @@ PrefabInstance:
     - target: {fileID: 1245243632720661339, guid: 9be3b9d38980be449bbd575b661c5436, type: 3}
       propertyPath: tolerancePerfectHit
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245243632720661339, guid: 9be3b9d38980be449bbd575b661c5436, type: 3}
+      propertyPath: keyToPress.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/leftArrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245243632720661339, guid: 9be3b9d38980be449bbd575b661c5436, type: 3}
+      propertyPath: keyToPress.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Gamepad>/dpad/left
       objectReference: {fileID: 0}
     - target: {fileID: 1245243632720661342, guid: 9be3b9d38980be449bbd575b661c5436, type: 3}
       propertyPath: m_Name

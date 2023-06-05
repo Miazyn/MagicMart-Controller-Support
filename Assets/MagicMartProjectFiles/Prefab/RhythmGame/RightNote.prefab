@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: c57316a42cfa1c547a76e4723dac8e5e, type: 3}
+    - target: {fileID: 5606108669516731600, guid: b640524c8716732419b85a1eda9f0090, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606108669516731600, guid: b640524c8716732419b85a1eda9f0090, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1641630741
+      objectReference: {fileID: 0}
     - target: {fileID: 5606108669516731601, guid: b640524c8716732419b85a1eda9f0090, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -57,7 +65,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5606108669516731603, guid: b640524c8716732419b85a1eda9f0090, type: 3}
       propertyPath: keyToPress
-      value: 275
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606108669516731603, guid: b640524c8716732419b85a1eda9f0090, type: 3}
+      propertyPath: keyToPress.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/rightArrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606108669516731603, guid: b640524c8716732419b85a1eda9f0090, type: 3}
+      propertyPath: keyToPress.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Gamepad>/dpad/right
       objectReference: {fileID: 0}
     - target: {fileID: 5606108669516731606, guid: b640524c8716732419b85a1eda9f0090, type: 3}
       propertyPath: m_Name

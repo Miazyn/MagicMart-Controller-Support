@@ -51,6 +51,11 @@ public class RhythmGameManager : MonoBehaviour
 
     Coroutine disableSFX;
     AudioSource managerMusic;
+
+
+    [SerializeField] Player player;
+    InputControl inputActions;
+
     private void Awake()
     {
         instance = this;
@@ -72,30 +77,37 @@ public class RhythmGameManager : MonoBehaviour
 
         manager.ChangeGameState(GameManager.GameState.MiniRhythmGameState);
         managerMusic = manager.gameObject.GetComponent<AudioSource>();
-    }
-    void Update()
-    {
 
+        player = Player.instance;
+        inputActions = player.controls;
+
+        inputActions.Player.Interact.performed += Interact_performed;
+
+        //ALL ARROWS
+        inputActions.Player.ArrowDown.performed += ArrowKeyClick_performed;
+        inputActions.Player.ArrowUp.performed += ArrowKeyClick_performed;
+        inputActions.Player.ArrowLeft.performed += ArrowKeyClick_performed;
+        inputActions.Player.ArrowRight.performed += ArrowKeyClick_performed;
+    }
+
+    private void ArrowKeyClick_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        soundAudioSource.clip = arrowClickSound;
+        soundAudioSource.Play();
+    }
+
+    private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
         if (!StartPlaying)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                managerMusic.volume = 0;
-                Panel.SetActive(false);
-                StartPlaying = true;
-                rhythmMusic.Play();
-                StartCoroutine(noteSpawn.CreateNotes(NotesToBeMade));
-            }
+            managerMusic.volume = 0;
+            Panel.SetActive(false);
+            StartPlaying = true;
+            rhythmMusic.Play();
+            StartCoroutine(noteSpawn.CreateNotes(NotesToBeMade));
         }
-
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow)||
-            Input.GetKeyDown(KeyCode.LeftArrow)|| Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            soundAudioSource.clip = arrowClickSound;
-            soundAudioSource.Play();
-        }
-
     }
+
 
     public void PercentageCalc()
     {

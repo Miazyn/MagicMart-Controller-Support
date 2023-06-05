@@ -41,6 +41,38 @@ public class @InputControl : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""ArrowUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""13effb25-5df8-48c9-a117-06b404b357ee"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""ArrowDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""ce9b2d6e-d5fe-4e80-b597-09f3be2ab0d5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""ArrowLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""b8b5e464-c7f4-4e66-b4b9-e9a094e9bd79"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""ArrowRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""5291c04c-4a24-4e9b-9018-c38b12f39fd6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
@@ -85,6 +117,94 @@ public class @InputControl : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""KeyboardMouse"",
                     ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a7ed7b4e-2f41-4e58-a5d6-294bd3819649"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""ArrowUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""415f1502-2272-4ebe-93f3-bf2f58ba11d2"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""ArrowUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c256fd08-ea67-4017-93f5-9914d53b2b1b"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""ArrowDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""72f96062-8145-4fa2-8573-7031bb384f3b"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""ArrowDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7f989b3d-3e1b-4a30-9712-4e4a82969e65"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""ArrowLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""92320e3b-91de-4fb0-b3da-dcca8192d9c3"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""ArrowLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""716254ef-7b6e-4b1f-b3c2-be877739665e"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""ArrowRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c055bc2a-8dfb-4f00-b526-781bd42556fc"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""ArrowRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -681,6 +801,10 @@ public class @InputControl : IInputActionCollection, IDisposable
         m_Player_Shop = m_Player.FindAction("Shop", throwIfNotFound: true);
         m_Player_Cooking = m_Player.FindAction("Cooking", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        m_Player_ArrowUp = m_Player.FindAction("ArrowUp", throwIfNotFound: true);
+        m_Player_ArrowDown = m_Player.FindAction("ArrowDown", throwIfNotFound: true);
+        m_Player_ArrowLeft = m_Player.FindAction("ArrowLeft", throwIfNotFound: true);
+        m_Player_ArrowRight = m_Player.FindAction("ArrowRight", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -745,6 +869,10 @@ public class @InputControl : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Shop;
     private readonly InputAction m_Player_Cooking;
     private readonly InputAction m_Player_Interact;
+    private readonly InputAction m_Player_ArrowUp;
+    private readonly InputAction m_Player_ArrowDown;
+    private readonly InputAction m_Player_ArrowLeft;
+    private readonly InputAction m_Player_ArrowRight;
     public struct PlayerActions
     {
         private @InputControl m_Wrapper;
@@ -752,6 +880,10 @@ public class @InputControl : IInputActionCollection, IDisposable
         public InputAction @Shop => m_Wrapper.m_Player_Shop;
         public InputAction @Cooking => m_Wrapper.m_Player_Cooking;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
+        public InputAction @ArrowUp => m_Wrapper.m_Player_ArrowUp;
+        public InputAction @ArrowDown => m_Wrapper.m_Player_ArrowDown;
+        public InputAction @ArrowLeft => m_Wrapper.m_Player_ArrowLeft;
+        public InputAction @ArrowRight => m_Wrapper.m_Player_ArrowRight;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -770,6 +902,18 @@ public class @InputControl : IInputActionCollection, IDisposable
                 @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @ArrowUp.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArrowUp;
+                @ArrowUp.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArrowUp;
+                @ArrowUp.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArrowUp;
+                @ArrowDown.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArrowDown;
+                @ArrowDown.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArrowDown;
+                @ArrowDown.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArrowDown;
+                @ArrowLeft.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArrowLeft;
+                @ArrowLeft.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArrowLeft;
+                @ArrowLeft.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArrowLeft;
+                @ArrowRight.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArrowRight;
+                @ArrowRight.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArrowRight;
+                @ArrowRight.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArrowRight;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -783,6 +927,18 @@ public class @InputControl : IInputActionCollection, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @ArrowUp.started += instance.OnArrowUp;
+                @ArrowUp.performed += instance.OnArrowUp;
+                @ArrowUp.canceled += instance.OnArrowUp;
+                @ArrowDown.started += instance.OnArrowDown;
+                @ArrowDown.performed += instance.OnArrowDown;
+                @ArrowDown.canceled += instance.OnArrowDown;
+                @ArrowLeft.started += instance.OnArrowLeft;
+                @ArrowLeft.performed += instance.OnArrowLeft;
+                @ArrowLeft.canceled += instance.OnArrowLeft;
+                @ArrowRight.started += instance.OnArrowRight;
+                @ArrowRight.performed += instance.OnArrowRight;
+                @ArrowRight.canceled += instance.OnArrowRight;
             }
         }
     }
@@ -915,6 +1071,10 @@ public class @InputControl : IInputActionCollection, IDisposable
         void OnShop(InputAction.CallbackContext context);
         void OnCooking(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnArrowUp(InputAction.CallbackContext context);
+        void OnArrowDown(InputAction.CallbackContext context);
+        void OnArrowLeft(InputAction.CallbackContext context);
+        void OnArrowRight(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

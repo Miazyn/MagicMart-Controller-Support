@@ -91,9 +91,18 @@ public class IngredientSpawner : MonoBehaviour, IPointerEnterHandler, IPointerEx
             mousePos = new Vector3(mouseDelta.x - cursorOffset, mouseDelta.y - (cursorOffset * heightMultiplier), 0);
         }
 
-        if (gamepadCursor.GetComponent<PlayerInput>().currentControlScheme == "KeyboardMouse")
+        if (gamepadCursor.GetComponent<PlayerInput>().currentControlScheme == "Gamepad")
         {
+            Gamepad gamepad = Gamepad.current;
+            if (gamepad != null)
+            {
+                Vector2 dPadInput = gamepad.dpad.ReadValue();
+                Vector2 currentPosition = gamepadCursor.transform.position;
 
+                float speed = 1f; // Adjust the speed of cursor movement
+
+                mousePos = currentPosition + new Vector2(dPadInput.x, dPadInput.y) * speed;
+            }
         }
 
         //Vector3 mousePos = new Vector3(Input.mousePosition.x - 2, Input.mousePosition.y - 2, Input.mousePosition.z);

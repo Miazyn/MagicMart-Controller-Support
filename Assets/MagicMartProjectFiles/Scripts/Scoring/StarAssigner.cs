@@ -13,26 +13,30 @@ public class StarAssigner : MonoBehaviour
 
     bool IsJudging = false;
     [SerializeField] SceneMana sceneMana;
+
+    Player player;
+    InputControl inputActions;
     void Start()
     {
+        player = Player.instance;
+        inputActions = player.controls;
+
         manager = GameManager.Instance;
 
         manager.ChangeGameState(GameManager.GameState.EvaluationState);
         score = manager.OverallScore;
 
+        inputActions.Player.Interact.performed += Interact_performed;
+
         StartCoroutine(Judge());
     }
 
-    void Update()
+    private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         if (IsJudging)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                sceneMana.LoadNextScene("MainStore");
-            }
+            sceneMana.LoadNextScene("MainStore");
         }
-        
     }
 
     IEnumerator Judge()

@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class NoteObject : MonoBehaviour
 {
@@ -8,7 +10,16 @@ public class NoteObject : MonoBehaviour
     [SerializeField] float toleranceGoodHit = 0.2f;
     [SerializeField] float tolerancePerfectHit = 0.1f;
     bool CanBePressed;
-    [SerializeField] KeyCode keyToPress;
+
+    public enum KeyToPress
+    {
+        left,
+        right,
+        up,
+        down
+    }
+
+    [SerializeField] KeyToPress keyToPress;
     bool HasHitNote;
     [SerializeField] float keyXValue;
 
@@ -16,26 +27,75 @@ public class NoteObject : MonoBehaviour
     [SerializeField] GameObject hitEffect, goodHitEffect, perfectHitEffect, missEffect;
 
     [SerializeField] float beatTempo = 120f;
+
+    Player player;
+    InputControl inputActions;
+
     private void Start()
     {
+        player = Player.instance;
+        inputActions = player.controls;
+
         beatTempo /= 60f;
 
+        inputActions.Player.ArrowDown.performed += ArrowDown_performed;
+        inputActions.Player.ArrowUp.performed += ArrowUp_performed;
+        inputActions.Player.ArrowLeft.performed += ArrowLeft_performed;
+        inputActions.Player.ArrowRight.performed += ArrowRight_performed;
+
     }
+
+    private void ArrowRight_performed(InputAction.CallbackContext obj)
+    {
+        if(KeyToPress.right == keyToPress)
+        {
+            IsInputValid();
+        }
+    }
+
+    private void ArrowLeft_performed(InputAction.CallbackContext obj)
+    {
+        if (KeyToPress.left == keyToPress)
+        {
+            IsInputValid();
+        }
+    }
+
+    private void ArrowUp_performed(InputAction.CallbackContext obj)
+    {
+        if (KeyToPress.up == keyToPress)
+        {
+            IsInputValid();
+        }
+    }
+
+    private void ArrowDown_performed(InputAction.CallbackContext obj)
+    {
+        if (KeyToPress.down == keyToPress)
+        {
+            IsInputValid();
+        }
+    }
+
+    private void IsInputValid()
+    {
+        Debug.Log("Key triggered");
+        if (CanBePressed)
+        {
+            Debug.Log("Press went through");
+            HasHitNote = true;
+            HitCheck();
+        }
+    }
+
     void Update()
     {
+        Debug.Log($"Can be pressed: {CanBePressed}");
         if (gameObject.activeSelf)
         {
             transform.position -= new Vector3(beatTempo * Time.deltaTime, 0f, 0f);
         }
-        if (Input.GetKeyDown(keyToPress))
-        {
-            if (CanBePressed)
-            {
-                HasHitNote = true;
-                HitCheck();
-
-            }
-        }
+        
     }
 
     private void HitCheck()
