@@ -69,8 +69,13 @@ public class IngredientSpawner : MonoBehaviour, IPointerEnterHandler, IPointerEx
     public void OnInitializePotentialDrag(PointerEventData eventData)
     {
         instantiatedObject = Instantiate(ingredientPrefab, prefabParent);
+
+        
         ingredientScript = instantiatedObject.GetComponent<CookIngredient>();
         ingredientScript.ingredient = ingredientToSpawn;
+
+        instantiatedObject.name = ingredientToSpawn.ingredientName + "(Spawned)";
+
         ingredientScript.canvas = canvas;
         instantiatedObject.GetComponent<CookIngredient>().AfterOnTheke = AfterThekeParent;
 
@@ -94,6 +99,8 @@ public class IngredientSpawner : MonoBehaviour, IPointerEnterHandler, IPointerEx
         //Vector3 mousePos = new Vector3(Input.mousePosition.x - 2, Input.mousePosition.y - 2, Input.mousePosition.z);
 
         instantiatedObject.transform.position = mousePos;
+
+      
 
         eventData.pointerDrag = instantiatedObject;
     }

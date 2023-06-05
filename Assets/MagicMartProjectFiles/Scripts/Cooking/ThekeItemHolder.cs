@@ -34,6 +34,10 @@ public class ThekeItemHolder : MonoBehaviour, IDropHandler, IPointerEnterHandler
         glowAnimator = glowEffect.GetComponent<Animator>();
     }
 
+    private void Update()
+    {
+        Debug.Log("Being used");
+    }
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("Dropped: " + eventData.pointerDrag);

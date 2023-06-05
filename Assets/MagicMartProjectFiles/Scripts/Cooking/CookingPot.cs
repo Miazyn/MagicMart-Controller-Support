@@ -55,27 +55,27 @@ public class CookingPot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
         manager.ChangeGameState(GameManager.GameState.CookingState);
     }
 
-    public void DebugUpdateRecipe()
-    {
-        //FOR TESTING
+    //public void DebugUpdateRecipe()
+    //{
+    //    //FOR TESTING
 
-        if (onIngredientsChangedCallback != null)
-        {
-            onIngredientsChangedCallback.Invoke();
-        }
-        ingredients = new List<SO_Ingredient>();
+    //    if (onIngredientsChangedCallback != null)
+    //    {
+    //        onIngredientsChangedCallback.Invoke();
+    //    }
+    //    ingredients = new List<SO_Ingredient>();
 
-        curHealth = 0;
-        curMana = 0;
-        curPower = 0;
+    //    curHealth = 0;
+    //    curMana = 0;
+    //    curPower = 0;
 
-        OverallScore = 0.0f;
+    //    OverallScore = 0.0f;
 
-        foreach (var item in GameObject.FindGameObjectsWithTag("Ingredient"))
-        {
-            Destroy(item.gameObject);
-        }
-    }
+    //    foreach (var item in GameObject.FindGameObjectsWithTag("Ingredient"))
+    //    {
+    //        Destroy(item.gameObject);
+    //    }
+    //}
 
 
     public void OnDrop(PointerEventData eventData)

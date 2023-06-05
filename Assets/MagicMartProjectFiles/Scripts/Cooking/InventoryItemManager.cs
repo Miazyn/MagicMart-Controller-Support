@@ -19,6 +19,8 @@ public class InventoryItemManager : MonoBehaviour
 
             _newIngredient.ingredientToSpawn = (SO_Ingredient)item;
 
+            _newIngredient.name = _newIngredient.ingredientToSpawn.ingredientName + " Spawner";
+
             _newIngredient.prefabParent = PrefabParent;
             _newIngredient.canvas = this.Canvas;
             _newIngredient.GetComponent<RectTransform>().anchoredPosition = ParentTransform.GetComponent<RectTransform>().anchoredPosition;

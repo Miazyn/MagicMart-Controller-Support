@@ -19,7 +19,7 @@ public class DebugCookingButtons : MonoBehaviour
     {
         recipe.recipe = recipes[Random.Range(0, recipes.Length - 1)];
         cookingPot.currentRecipe = recipe.recipe;
-        cookingPot.DebugUpdateRecipe();
+        //cookingPot.DebugUpdateRecipe();
         recipe.CreateRecipeBoard();
     }
 }
