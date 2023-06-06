@@ -78,6 +78,7 @@ public class RhythmGameManager : MonoBehaviour
         manager.ChangeGameState(GameManager.GameState.MiniRhythmGameState);
         managerMusic = manager.gameObject.GetComponent<AudioSource>();
 
+
         player = Player.instance;
         inputActions = player.controls;
 
@@ -136,6 +137,7 @@ public class RhythmGameManager : MonoBehaviour
         sparkleEffect1.SetActive(true);
         sparkleEffect2.SetActive(true);
         sparkleEffect3.SetActive(true);
+
 
         yield return new WaitForSeconds(2.0f);
 

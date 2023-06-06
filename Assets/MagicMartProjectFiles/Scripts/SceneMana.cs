@@ -17,7 +17,6 @@ public class SceneMana : MonoBehaviour
     public void LoadNextScene(string _sceneName)
     {
         SceneManager.LoadScene(_sceneName, LoadSceneMode.Single);
-
     }
 
     IEnumerator WaitForFade(string _sceneName)

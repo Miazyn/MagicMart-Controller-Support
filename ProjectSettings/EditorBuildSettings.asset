@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MagicMartProjectFiles/Scenes/CookingArea.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/MagicMartProjectFiles/Scenes/MainMenu.unity
     guid: a6b70dbd8260af147811097df6719d20
+  - enabled: 1
+    path: Assets/MagicMartProjectFiles/Scenes/CookingArea.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/MagicMartProjectFiles/Scenes/MainStore.unity
     guid: 501307ad5f6cbec4c9b914b7f7431020

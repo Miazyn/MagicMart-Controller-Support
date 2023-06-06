@@ -27,12 +27,25 @@ public class GamepadCursor : MonoBehaviour
     private const string mouseScheme = "KeyboardMouse";
     private void OnEnable()
     {
+
         mainCam = Camera.main;
         currentMouse = Mouse.current;
 
-        if(virtualMouse == null)
+        foreach (var device in InputSystem.devices)
+        {
+            if (device.name == "VirtualMouse")
+            {
+                virtualMouse = (Mouse)device;
+                break;
+            }
+        }
+
+        
+
+        if (virtualMouse == null)
         {
             virtualMouse = (Mouse) InputSystem.AddDevice("VirtualMouse");
+
         }   
         else if (!virtualMouse.added)
         {
@@ -52,6 +65,7 @@ public class GamepadCursor : MonoBehaviour
     }
     private void OnDisable()
     {
+
         playerInput.onControlsChanged -= OnControlsChanged;
 
         if (virtualMouse != null && virtualMouse.added)
@@ -114,6 +128,8 @@ public class GamepadCursor : MonoBehaviour
             currentMouse.WarpCursorPosition(virtualMouse.position.ReadValue());
 
             previousControlScheme = mouseScheme;
+
+
         }
         else if (playerInput.currentControlScheme == gamepadScheme && previousControlScheme != gamepadScheme)
         {
@@ -123,7 +139,10 @@ public class GamepadCursor : MonoBehaviour
             AnchorCursor(currentMouse.position.ReadValue());
 
             previousControlScheme = gamepadScheme;
+
         }
+
+
     }
 
 }

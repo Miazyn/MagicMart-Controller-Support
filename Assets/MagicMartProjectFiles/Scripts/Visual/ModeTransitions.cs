@@ -59,7 +59,9 @@ public class ModeTransitions : MonoBehaviour
         if (manager.curState == GameManager.GameState.MiniRhythmGameState)
         {
             //Into Evaluation
+            
             sceneMana.LoadNextScene("Score");
+            
         }
     }
 

@@ -118,50 +118,56 @@ public class GameManager : MonoBehaviour
 
     public void CheckGameStateAction()
     {
-        if (curState == GameState.DayStart)
+
+        switch (curState)
         {
-            StartNextDay();
+            case GameState.DayStart:
+                StartNextDay();
+                break;
+            case GameState.StartState:
+                StartCoroutine(CustomerSpacingDelay());
+                break;
+            case GameState.DialogState:
+                if (onNextCustomerCallback != null)
+                {
+                    onNextCustomerCallback.Invoke();
+                }
+
+                dialogueManager = DialogueManager.instance;
+                if (CustomerCounter < ExpectedCustomerAmount)
+                {
+                    CurrentRecipe = Customers[CustomerCounter].quests[0].ReqRecipe;
+                    dialogueManager.SetUpDialog(Customers[CustomerCounter].quests[0].QuestDialogBeforeCompletion[0], Customers[CustomerCounter], Customers[CustomerCounter].quests[0].ReqRecipe);
+                }
+                else
+                {
+                    ChangeGameState(GameState.DayStart);
+                }
+                break;
+            case GameState.CookingState:
+                break;
+            case GameState.MiniRhythmGameState:
+                break;
+            case GameState.ShoppingState:
+                break;
+            case GameState.IdleState:
+                break;
+            case GameState.EvaluationState:
+                ResetMusic();
+                Evaluation();
+                break;
+            case GameState.AfterDialog:
+                dialogueManager = DialogueManager.instance;
+
+                moneySound = GameObject.Find("MoneySound").GetComponent<AudioSource>();
+                player.SetMoneyAmount(MoneyForPlayer());
+                moneySound.Play();
+                AfterQuestDialog();
+                break;
+            default:
+                break;
         }
 
-        if (curState == GameState.StartState)
-        {
-            StartCoroutine(CustomerSpacingDelay());
-        }
-
-        if (curState == GameState.DialogState)
-        {
-            if (onNextCustomerCallback != null)
-            {
-                onNextCustomerCallback.Invoke();
-            }
-
-            dialogueManager = DialogueManager.instance;
-            if (CustomerCounter < ExpectedCustomerAmount)
-            {
-                CurrentRecipe = Customers[CustomerCounter].quests[0].ReqRecipe;
-                dialogueManager.SetUpDialog(Customers[CustomerCounter].quests[0].QuestDialogBeforeCompletion[0], Customers[CustomerCounter], Customers[CustomerCounter].quests[0].ReqRecipe);
-            }
-            else
-            {
-                ChangeGameState(GameState.DayStart);
-            }
-        }
-
-        if (curState == GameState.EvaluationState)
-        {
-            ResetMusic();
-            Evaluation();
-        }
-
-        if (curState == GameState.AfterDialog)
-        {
-            dialogueManager = DialogueManager.instance;
-
-            moneySound = GameObject.Find("MoneySound").GetComponent<AudioSource>();
-            player.SetMoneyAmount(MoneyForPlayer());
-            moneySound.Play();
-            AfterQuestDialog();
-        }
     }
 
     void StartNextDay()

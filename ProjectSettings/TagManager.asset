@@ -8,6 +8,7 @@ TagManager:
   - Activator
   - Despawner
   - Note
+  - Cursor
   layers:
   - Default
   - TransparentFX
