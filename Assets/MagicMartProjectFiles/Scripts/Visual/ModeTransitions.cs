@@ -54,7 +54,9 @@ public class ModeTransitions : MonoBehaviour
         if (manager.curState == GameManager.GameState.CookingState)
         {
             //Into Rhythm
-            sceneMana.LoadNextScene("RhythmMiniGame");
+            
+                sceneMana.LoadNextScene("RhythmMiniGame");
+            
         }
         if (manager.curState == GameManager.GameState.MiniRhythmGameState)
         {
@@ -69,5 +71,10 @@ public class ModeTransitions : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         clickToContinue.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        inputActions.Player.Interact.performed -= Interact_performed;
     }
 }

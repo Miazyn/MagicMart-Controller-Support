@@ -207,4 +207,15 @@ public class RhythmGameManager : MonoBehaviour
         sparkleEffect3.SetActive(false);
         glow.SetActive(false);
     }
+
+    private void OnDisable()
+    {
+        inputActions.Player.Interact.performed -= Interact_performed;
+
+        //ALL ARROWS
+        inputActions.Player.ArrowDown.performed -= ArrowKeyClick_performed;
+        inputActions.Player.ArrowUp.performed -= ArrowKeyClick_performed;
+        inputActions.Player.ArrowLeft.performed -= ArrowKeyClick_performed;
+        inputActions.Player.ArrowRight.performed -= ArrowKeyClick_performed;
+    }
 }

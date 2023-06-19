@@ -31,6 +31,11 @@ public class StarAssigner : MonoBehaviour
         StartCoroutine(Judge());
     }
 
+    private void OnDisable()
+    {
+        inputActions.Player.Interact.performed -= Interact_performed;
+    }
+
     private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         if (IsJudging)

@@ -55,29 +55,6 @@ public class CookingPot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
         manager.ChangeGameState(GameManager.GameState.CookingState);
     }
 
-    //public void DebugUpdateRecipe()
-    //{
-    //    //FOR TESTING
-
-    //    if (onIngredientsChangedCallback != null)
-    //    {
-    //        onIngredientsChangedCallback.Invoke();
-    //    }
-    //    ingredients = new List<SO_Ingredient>();
-
-    //    curHealth = 0;
-    //    curMana = 0;
-    //    curPower = 0;
-
-    //    OverallScore = 0.0f;
-
-    //    foreach (var item in GameObject.FindGameObjectsWithTag("Ingredient"))
-    //    {
-    //        Destroy(item.gameObject);
-    //    }
-    //}
-
-
     public void OnDrop(PointerEventData eventData)
     {
         CookIngredient currentIngredient = eventData.pointerDrag.GetComponent<CookIngredient>();
@@ -289,7 +266,7 @@ public class CookingPot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
     public void StartCooking()
     {
         if (currentRecipe.ContainsRecipe(ingredients))
-        { 
+        {
             OverallScore =  Scoring();
             manager.CookingGameScore = OverallScore;
             sceneMana.LoadNextScene("TransitionScene");

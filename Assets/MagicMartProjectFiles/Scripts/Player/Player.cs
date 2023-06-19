@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
 
     private void Interact_performed()
     {
-        if (manager)
+        if (manager != null)
         {
             if (manager.curState == GameManager.GameState.DialogState)
             {

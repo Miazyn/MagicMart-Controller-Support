@@ -45,6 +45,14 @@ public class NoteObject : MonoBehaviour
 
     }
 
+    private void OnDisable()
+    {
+        inputActions.Player.ArrowDown.performed -= ArrowDown_performed;
+        inputActions.Player.ArrowUp.performed -= ArrowUp_performed;
+        inputActions.Player.ArrowLeft.performed -= ArrowLeft_performed;
+        inputActions.Player.ArrowRight.performed -= ArrowRight_performed;
+    }
+
     private void ArrowRight_performed(InputAction.CallbackContext obj)
     {
         if(KeyToPress.right == keyToPress)
