@@ -7,7 +7,6 @@ public class MainMenuButtons : MonoBehaviour
 {
     [SerializeField] string mainGame = "";
 
-    private bool creditsVisible = false;
     [SerializeField] public GameObject credits;
     
     public void StartGame()
@@ -17,19 +16,8 @@ public class MainMenuButtons : MonoBehaviour
 
     public void ToggleCredits()
     {
-        creditsVisible = !creditsVisible;
-
-        if (creditsVisible)
-        {
-            credits.SetActive(true);
-        }
-        else if(!creditsVisible)
-        {
-            credits.SetActive(false);
-        }
-
+        credits.SetActive(credits.activeSelf ? false : true);
     }
-
 
     public void QuitApplication()
     {
