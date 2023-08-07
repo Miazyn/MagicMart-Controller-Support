@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.InputSystem.Users;
 
 public class GamepadCursor : MonoBehaviour
@@ -25,6 +26,36 @@ public class GamepadCursor : MonoBehaviour
 
     private const string gamepadScheme = "Gamepad";
     private const string mouseScheme = "KeyboardMouse";
+
+
+    public static GamepadCursor instance;
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            AssignMissingValues(cursorTransform, canvasRectTransform, canvas, GetComponent<PlayerInput>().uiInputModule, GetComponent<PlayerInput>().camera);
+            Destroy(gameObject);
+        }
+    }
+
+    public void AssignMissingValues(RectTransform _cursorTransform, RectTransform _canvasRect,
+        Canvas _canvas, InputSystemUIInputModule _uiInputModule, Camera _cam)
+    {
+        cursorTransform = _cursorTransform;
+        canvasRectTransform = _canvasRect;
+        canvas = _canvas;
+
+        PlayerInput playerInput = GetComponent<PlayerInput>();
+        playerInput.uiInputModule = _uiInputModule;
+        playerInput.camera = _cam;
+    }
+
     private void OnEnable()
     {
 
@@ -121,6 +152,8 @@ public class GamepadCursor : MonoBehaviour
 
     private void OnControlsChanged(PlayerInput input)
     {
+        Debug.Log($"Controls have changed: {playerInput.currentControlScheme}");
+
         if (playerInput.currentControlScheme == mouseScheme && previousControlScheme != mouseScheme)
         {
             cursorTransform.gameObject.SetActive(false);
