@@ -18,6 +18,8 @@ public class ShopManager : MonoBehaviour
     [SerializeField] AudioSource clickButton;
     [SerializeField] AudioSource boughtSound;
     Player player;
+    [Space]
+    [SerializeField] private GameObject cursor;
 
     void Awake()
     {
@@ -37,6 +39,7 @@ public class ShopManager : MonoBehaviour
             _shopTile.GetComponent<ShopTile>().Ingredient = allIngredients[i];
             _shopTile.GetComponent<ShopTile>().buttonClick = clickButton;
             _shopTile.GetComponent<ShopTile>().buySound = boughtSound;
+            _shopTile.GetComponent<ShopTile>().cursor = cursor;
 
             _shopTile.GetComponent<ShopTile>().SetUpTile();
         }

@@ -280,6 +280,14 @@
                     "expectedControlType": "Quaternion",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "ScrollController",
+                    "type": "Value",
+                    "id": "acc18bbf-245e-4f13-8acf-323db6fe8b70",
+                    "expectedControlType": "Dpad",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -703,6 +711,17 @@
                 },
                 {
                     "name": "",
+                    "id": "90e4e19c-02e8-4902-82e5-83ea905035ed",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "ScaleVector2(y=10)",
+                    "groups": "Gamepad",
+                    "action": "ScrollWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2584ee81-5e14-4e9b-8528-7a14738f6df6",
                     "path": "<Mouse>/middleButton",
                     "interactions": "",
@@ -742,6 +761,17 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "98123ad9-4a32-48da-9f3a-c0c024355c55",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "ScrollController",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

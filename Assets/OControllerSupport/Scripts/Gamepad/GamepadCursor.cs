@@ -25,92 +25,54 @@ public class GamepadCursor : MonoBehaviour
     private string previousControlScheme = "";
 
     private const string gamepadScheme = "Gamepad";
-    private const string mouseScheme = "KeyboardMouse";
+    //private const string mouseScheme = "KeyboardMouse";
 
 
     public static GamepadCursor instance;
 
     private void Awake()
     {
-        if(instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            AssignMissingValues(cursorTransform, canvasRectTransform, canvas, GetComponent<PlayerInput>().uiInputModule, GetComponent<PlayerInput>().camera);
-            Destroy(gameObject);
-        }
+        //if (instance == null)
+        //{
+        //    instance = this;
+        //    DontDestroyOnLoad(gameObject);
+        //}
+        //else
+        //{
+        //    AssignMissingValues(cursorTransform, canvasRectTransform, canvas, GetComponent<PlayerInput>().uiInputModule, GetComponent<PlayerInput>().camera);
+            
+        //}
+
+    }
+    private void Start()
+    {
+        OnControlsChanged(playerInput);
+
     }
 
-    public void AssignMissingValues(RectTransform _cursorTransform, RectTransform _canvasRect,
-        Canvas _canvas, InputSystemUIInputModule _uiInputModule, Camera _cam)
+    public void AssignMissingValues(RectTransform _cursorTransform, RectTransform _canvasRect, Canvas _canvas, InputSystemUIInputModule _uiInputModule, Camera _cam)
     {
-        cursorTransform = _cursorTransform;
-        canvasRectTransform = _canvasRect;
-        canvas = _canvas;
+        Debug.Log($"This is my instance here: {instance.name}");
 
-        PlayerInput playerInput = GetComponent<PlayerInput>();
+        instance.cursorTransform = _cursorTransform;
+        instance.canvasRectTransform = _canvasRect;
+        instance.canvas = _canvas;
+
+        PlayerInput playerInput = instance.GetComponent<PlayerInput>();
         playerInput.uiInputModule = _uiInputModule;
+
+        playerInput.defaultControlScheme = gamepadScheme;
+
         playerInput.camera = _cam;
-    }
-
-    private void OnEnable()
-    {
-
-        mainCam = Camera.main;
-        currentMouse = Mouse.current;
-
-        foreach (var device in InputSystem.devices)
-        {
-            if (device.name == "VirtualMouse")
-            {
-                virtualMouse = (Mouse)device;
-                break;
-            }
-        }
 
         
-
-        if (virtualMouse == null)
-        {
-            virtualMouse = (Mouse) InputSystem.AddDevice("VirtualMouse");
-
-        }   
-        else if (!virtualMouse.added)
-        {
-            InputSystem.AddDevice(virtualMouse);
-        }
-        InputUser playerUser = playerInput.user;
-        InputUser.PerformPairingWithDevice(virtualMouse, playerInput.user);
-
-        if(cursorTransform != null)
-        {
-            Vector2 position = cursorTransform.anchoredPosition;
-            InputState.Change(virtualMouse.position, position);
-        }
-
-        InputSystem.onAfterUpdate += UpdateMotion;
-        playerInput.onControlsChanged += OnControlsChanged;
     }
-    private void OnDisable()
-    {
 
-        playerInput.onControlsChanged -= OnControlsChanged;
-
-        if (virtualMouse != null && virtualMouse.added)
-        {
-            playerInput.user.UnpairDevice(virtualMouse);
-            InputSystem.RemoveDevice(virtualMouse);
-        }
-
-        InputSystem.onAfterUpdate -= UpdateMotion;
-    }
+    #region[Move Update Cursor]
 
     private void UpdateMotion()
     {
-        if(virtualMouse == null || Gamepad.current == null)
+        if (virtualMouse == null || Gamepad.current == null)
         {
             return;
         }
@@ -129,7 +91,7 @@ public class GamepadCursor : MonoBehaviour
 
         bool ButtonIsPressed = Gamepad.current.buttonSouth.IsPressed();
 
-        if(previousMouseState != ButtonIsPressed)
+        if (previousMouseState != ButtonIsPressed)
         {
             virtualMouse.CopyState<MouseState>(out var mouseState);
             mouseState.WithButton(MouseButton.Left, ButtonIsPressed);
@@ -152,30 +114,67 @@ public class GamepadCursor : MonoBehaviour
 
     private void OnControlsChanged(PlayerInput input)
     {
-        Debug.Log($"Controls have changed: {playerInput.currentControlScheme}");
+        previousControlScheme = gamepadScheme;
 
-        if (playerInput.currentControlScheme == mouseScheme && previousControlScheme != mouseScheme)
-        {
-            cursorTransform.gameObject.SetActive(false);
-            Cursor.visible = true;
-            currentMouse.WarpCursorPosition(virtualMouse.position.ReadValue());
+        Debug.Log($"Controls are: {previousControlScheme}");
 
-            previousControlScheme = mouseScheme;
+        cursorTransform.gameObject.SetActive(true);
+        Cursor.visible = false;
 
-
-        }
-        else if (playerInput.currentControlScheme == gamepadScheme && previousControlScheme != gamepadScheme)
-        {
-            cursorTransform.gameObject.SetActive(true);
-            Cursor.visible = false;
-            InputState.Change(virtualMouse.position, currentMouse.position.ReadValue());
-            AnchorCursor(currentMouse.position.ReadValue());
-
-            previousControlScheme = gamepadScheme;
-
-        }
-
-
+        //InputState.Change(virtualMouse.position, currentMouse.position.ReadValue());
+        //AnchorCursor(currentMouse.position.ReadValue());
     }
 
+#endregion
+
+    #region[Enable Disable]
+    private void OnEnable()
+    {
+
+        mainCam = Camera.main;
+        currentMouse = Mouse.current;
+
+        foreach (var device in InputSystem.devices)
+        {
+            if (device.name == "VirtualMouse")
+            {
+                virtualMouse = (Mouse)device;
+                break;
+            }
+        }
+
+        if (virtualMouse == null)
+        {
+            virtualMouse = (Mouse)InputSystem.AddDevice("VirtualMouse");
+
+        }
+        else if (!virtualMouse.added)
+        {
+            InputSystem.AddDevice(virtualMouse);
+        }
+        InputUser playerUser = playerInput.user;
+        InputUser.PerformPairingWithDevice(virtualMouse, playerInput.user);
+
+        if (cursorTransform != null)
+        {
+            Vector2 position = cursorTransform.anchoredPosition;
+            InputState.Change(virtualMouse.position, position);
+        }
+
+        InputSystem.onAfterUpdate += UpdateMotion;
+        playerInput.onControlsChanged += OnControlsChanged;
+    }
+    private void OnDisable()
+    {
+        playerInput.onControlsChanged -= OnControlsChanged;
+
+        if (virtualMouse != null && virtualMouse.added)
+        {
+            playerInput.user.UnpairDevice(virtualMouse);
+            InputSystem.RemoveDevice(virtualMouse);
+        }
+
+        InputSystem.onAfterUpdate -= UpdateMotion;
+    }
+    #endregion
 }

@@ -1567,6 +1567,7 @@ GameObject:
   m_Component:
   - component: {fileID: 890122058}
   - component: {fileID: 890122059}
+  - component: {fileID: 890122060}
   m_Layer: 5
   m_Name: Scroll
   m_TagString: Untagged
@@ -1609,8 +1610,8 @@ MonoBehaviour:
   m_Content: {fileID: 1370517373}
   m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 1
-  m_Elasticity: 0.1
+  m_MovementType: 2
+  m_Elasticity: 0.05
   m_Inertia: 1
   m_DecelerationRate: 0.135
   m_ScrollSensitivity: 50
@@ -1624,6 +1625,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &890122060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890122057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be161fb41c0ddb84b8c73bc88ba91f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 10
 --- !u!1 &939239910
 GameObject:
   m_ObjectHideFlags: 0

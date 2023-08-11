@@ -1411,6 +1411,7 @@ MonoBehaviour:
   money: {fileID: 886811814}
   clickButton: {fileID: 1351237984}
   boughtSound: {fileID: 573542737}
+  cursor: {fileID: 1951468988}
 --- !u!1 &1302088646
 GameObject:
   m_ObjectHideFlags: 0
@@ -3139,6 +3140,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937920355}
   m_CullTransparentMesh: 1
+--- !u!1 &1951468988 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3851501697859696903, guid: ecb01bcf7c891854da0e00c0c69d9b04, type: 3}
+  m_PrefabInstance: {fileID: 1838725576}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1994579852
 GameObject:
   m_ObjectHideFlags: 0

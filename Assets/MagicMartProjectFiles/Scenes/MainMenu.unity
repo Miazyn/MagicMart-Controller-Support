@@ -242,7 +242,11 @@ PrefabInstance:
       objectReference: {fileID: 1808284101}
     - target: {fileID: 4464327644769316354, guid: 92bb878e26efbcd459a045b61ae659cb, type: 3}
       propertyPath: m_DefaultActionMap
-      value: e0070922-1038-45ae-8704-1169b97ec703
+      value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464327644769316354, guid: 92bb878e26efbcd459a045b61ae659cb, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Gamepad
       objectReference: {fileID: 0}
     - target: {fileID: 4464327644769316364, guid: 92bb878e26efbcd459a045b61ae659cb, type: 3}
       propertyPath: canvas

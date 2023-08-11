@@ -21,6 +21,7 @@ public class ShopTile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
     Player CurrentPlayer;
     [SerializeField]    SO_Inventory PlayerInventory;
 
+    public GameObject cursor;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -74,7 +75,7 @@ public class ShopTile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
 
     void ShowMessage()
     {
-        DescriptionBoxOnHover.OnMouseOver(Ingredient, Input.mousePosition);
+        DescriptionBoxOnHover.OnMouseOver(Ingredient, cursor.transform.position);
     }
 
     IEnumerator TimerB4ShowDesc()
