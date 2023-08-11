@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class CookIngredient : MonoBehaviour, IDropHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
@@ -30,6 +31,8 @@ public class CookIngredient : MonoBehaviour, IDropHandler, IBeginDragHandler, IE
     bool IsDragged = false;
 
 
+    public GameObject cursor;
+
     private void Awake()
     {
         rect = GetComponent<RectTransform>();
@@ -45,6 +48,9 @@ public class CookIngredient : MonoBehaviour, IDropHandler, IBeginDragHandler, IE
             Debug.LogWarning("NO CANVAS FOR SCALE DEFINED");
         }
         ogScale = rect.localScale;
+
+        rect.anchoredPosition = cursor.GetComponent<RectTransform>().localPosition;
+
         StartCoroutine(CheckIfDragged());
 
     }
@@ -59,9 +65,12 @@ public class CookIngredient : MonoBehaviour, IDropHandler, IBeginDragHandler, IE
     }
     public void OnDrag(PointerEventData eventData)
     {
+        Vector2 joystickInput = Gamepad.current.leftStick.ReadValue();
 
         IsOnTheke = false;
         rect.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        //rect.anchoredPosition += joystickInput / canvas.scaleFactor;
+
         IsDragged = true;
     }
     public void OnEndDrag(PointerEventData eventData)

@@ -10,4 +10,5 @@ public class SO_Quest : ScriptableObject
     public SO_Recipe ReqRecipe;
     public SO_CookedFood CookedFood;
 
+    public bool IsFinished;
 }

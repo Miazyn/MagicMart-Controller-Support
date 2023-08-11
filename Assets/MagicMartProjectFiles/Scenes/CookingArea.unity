@@ -947,6 +947,11 @@ RectTransform:
   m_AnchoredPosition: {x: 362.16418, y: -43}
   m_SizeDelta: {x: 285.5142, y: 124.936}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &605134313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3851501697859696903, guid: ecb01bcf7c891854da0e00c0c69d9b04, type: 3}
+  m_PrefabInstance: {fileID: 978388606}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &610389747
 GameObject:
   m_ObjectHideFlags: 0
@@ -4220,6 +4225,7 @@ MonoBehaviour:
   PrefabParent: {fileID: 1541532263}
   OnThekeParent: {fileID: 655667012}
   Canvas: {fileID: 2014273509}
+  cursor: {fileID: 605134313}
 --- !u!1 &2018016310
 GameObject:
   m_ObjectHideFlags: 0

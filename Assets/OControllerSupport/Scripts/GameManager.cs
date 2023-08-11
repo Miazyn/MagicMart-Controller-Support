@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     public SO_NPC[] Customers;
     public SO_Recipe CurrentRecipe;
+    private SO_Quest curQuest;
 
     public int day;
     public int ExpectedCustomerAmount;
@@ -89,23 +90,23 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private void Update()
-    {
-        //SAVE DATA SYSTEM
-        /*
-        if (Keyboard.current.jKey.IsPressed())
-        {
-            SaveData();
-        }
-        if (Keyboard.current.lKey.IsPressed())
-        {
-            if (SaveSystem.HasSaveData())
-            {
-                LoadData();
-            }
-        }
-        */
-    }
+    //private void Update()
+    //{
+    //    //SAVE DATA SYSTEM
+    //    /*
+    //    if (Keyboard.current.jKey.IsPressed())
+    //    {
+    //        SaveData();
+    //    }
+    //    if (Keyboard.current.lKey.IsPressed())
+    //    {
+    //        if (SaveSystem.HasSaveData())
+    //        {
+    //            LoadData();
+    //        }
+    //    }
+    //    */
+    //}
 
     public void ChangeGameState(GameState _newState)
     {
@@ -136,8 +137,13 @@ public class GameManager : MonoBehaviour
                 dialogueManager = DialogueManager.instance;
                 if (CustomerCounter < ExpectedCustomerAmount)
                 {
-                    CurrentRecipe = Customers[CustomerCounter].quests[0].ReqRecipe;
-                    dialogueManager.SetUpDialog(Customers[CustomerCounter].quests[0].QuestDialogBeforeCompletion[0], Customers[CustomerCounter], Customers[CustomerCounter].quests[0].ReqRecipe);
+                    int next = FindNextQuest();
+
+                    curQuest = Customers[CustomerCounter].quests[next];
+
+                    CurrentRecipe = curQuest.ReqRecipe;
+
+                    dialogueManager.SetUpDialog(Customers[CustomerCounter].quests[next].QuestDialogBeforeCompletion[0], Customers[CustomerCounter], Customers[CustomerCounter].quests[next].ReqRecipe);
                 }
                 else
                 {
@@ -163,11 +169,27 @@ public class GameManager : MonoBehaviour
                 player.SetMoneyAmount(MoneyForPlayer());
                 moneySound.Play();
                 AfterQuestDialog();
+
+                //curQuest.IsFinished = true;
+
                 break;
             default:
                 break;
         }
 
+    }
+
+    public int FindNextQuest()
+    {
+        for (int i = 0; i < Customers[CustomerCounter].quests.Length; i++)
+        {
+            if (!Customers[CustomerCounter].quests[i].IsFinished)
+            {
+                return i;
+            }
+        }
+
+        return Customers[CustomerCounter].quests.Length - 1;
     }
 
     void StartNextDay()

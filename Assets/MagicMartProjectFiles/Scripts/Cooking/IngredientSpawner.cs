@@ -26,6 +26,8 @@ public class IngredientSpawner : MonoBehaviour, IPointerEnterHandler, IPointerEx
     [Range(10f, 20f)] [SerializeField] private float cursorOffset = 10f;
     [Range(1.1f, 5f)] [SerializeField] private float heightMultiplier = 1.2f;
 
+    public GameObject cursor;
+
     [SerializeField] public Image itemImage { get; private set; }
     CookIngredient ingredientScript;
     GameObject instantiatedObject;
@@ -76,11 +78,14 @@ public class IngredientSpawner : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
         instantiatedObject.name = ingredientToSpawn.ingredientName + "(Spawned)";
 
+        instantiatedObject.GetComponent<CookIngredient>().cursor = cursor;
+
         ingredientScript.canvas = canvas;
         instantiatedObject.GetComponent<CookIngredient>().AfterOnTheke = AfterThekeParent;
 
         currentpos = GetComponent<RectTransform>().anchoredPosition;
         RectTransform rt = instantiatedObject.GetComponent<RectTransform>();
+
         rt.anchoredPosition = currentpos;
 
         Vector3 mousePos = Vector3.zero;

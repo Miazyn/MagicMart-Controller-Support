@@ -16,7 +16,7 @@ MonoBehaviour:
   QuestID: 1
   ReqRecipe: {fileID: 11400000, guid: 257381aff09d0514e8f8ce55988d74a0, type: 2}
   CookedFood: {fileID: 0}
-  _IsFullFilled: 0
+  IsFinished: 0
   QuestDialogBeforeCompletion:
   - {fileID: 11400000, guid: 640afd3d38f25fc4d9572c83f3b9da42, type: 2}
   - {fileID: 11400000, guid: c4e71c43d14fe6347b14fb86d23c9a09, type: 2}

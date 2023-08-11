@@ -10,6 +10,8 @@ public class InventoryItemManager : MonoBehaviour
     public Transform OnThekeParent;
     public Canvas Canvas;
 
+    [SerializeField] private GameObject cursor;
+
     private void Awake()
     {
         var loadItems = Resources.LoadAll("CookingIngredients", typeof(SO_Ingredient));
@@ -18,6 +20,7 @@ public class InventoryItemManager : MonoBehaviour
             IngredientSpawner _newIngredient = Instantiate(ItemSlotPrefab, ParentTransform).GetComponent<IngredientSpawner>();
 
             _newIngredient.ingredientToSpawn = (SO_Ingredient)item;
+            _newIngredient.cursor = cursor;
 
             _newIngredient.name = _newIngredient.ingredientToSpawn.ingredientName + " Spawner";
 
